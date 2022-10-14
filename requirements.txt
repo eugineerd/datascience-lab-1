@@ -1,0 +1,15 @@
+# local package
+-e .
+
+# dependencies
+catboost
+scikit-learn
+pandas
+seaborn
+click
+Sphinx
+coverage
+python-dotenv>=0.5.1
+
+# tools
+dvc
