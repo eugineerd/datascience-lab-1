@@ -1,0 +1,7 @@
+stages:
+  preprocess:
+    cmd: make data
+    deps:
+    - data/raw
+    outs:
+    - data/processed
