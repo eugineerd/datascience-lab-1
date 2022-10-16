@@ -37,6 +37,9 @@ clean:
 ## Lint using flake8
 lint:
 	flake8 src
+	
+train:
+	$(PYTHON_INTERPRETER) -m src.models.train_models
 
 ## Upload Data to S3
 sync_data_to_s3:

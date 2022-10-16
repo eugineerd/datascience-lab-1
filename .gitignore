@@ -88,3 +88,5 @@ data/*
 
 # Mypy cache
 .mypy_cache/
+
+*.pkl
