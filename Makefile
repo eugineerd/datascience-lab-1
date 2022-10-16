@@ -41,6 +41,9 @@ lint:
 train:
 	$(PYTHON_INTERPRETER) -m src.models.train_models
 
+visualize:
+	$(PYTHON_INTERPRETER) -m src.visualization.visualize
+
 ## Upload Data to S3
 sync_data_to_s3:
 ifeq (default,$(PROFILE))

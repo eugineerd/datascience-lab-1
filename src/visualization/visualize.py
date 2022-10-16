@@ -10,7 +10,22 @@ def main():
     X, y = df.iloc[:, :-5], df.iloc[:, -5:]
     y_pred = zip(*cb_multi.predict(X))
     y_test = [col for name, col in y.items()]
-    print(rate_model(zip(y_test, y_pred))[0])
+    rating = rate_model(zip(y_test, y_pred))[0]
+    print(f"Catboost multilabel: {rating:.4f}")
+
+    results = []
+    for i in range(5):
+        y_pred = cbs[i].predict(X)
+        results.append((y.iloc[:, i], y_pred))
+    rating = rate_model(results)[0]
+    print(f"Catboost per-label: {rating:.4f}")
+
+    results = []
+    for i in range(5):
+        y_pred = sgds[i].predict(X)
+        results.append((y.iloc[:, i], y_pred))
+    rating = rate_model(results)[0]
+    print(f"SGDClassifier: {rating:.4f}")
 
 
 if __name__ == "__main__":

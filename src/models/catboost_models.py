@@ -35,6 +35,7 @@ def make_catboost_one_for_each_category(
         auto_class_weights="Balanced",
         depth=4,
         learning_rate=0.015,
+        # ctr_leaf_count_limit=6,
     )
     params.update(custom_params)
     for col in y_test.columns:
